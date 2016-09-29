@@ -27,8 +27,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'main.css' | asset_url | stylesheet_tag }}
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
@@ -147,7 +151,7 @@
     </div>
   {% endif %}
   <div id="PageContainer" class="is-moved-by-drawer">
-    <header class="site-header" role="banner">
+    <header class="c-header site-header" role="banner">
       <div class="wrapper">
 
         <div class="grid--full grid--table">

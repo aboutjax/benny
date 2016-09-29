@@ -1,0 +1,24 @@
+{
+  "name": "benny",
+  "version": "1.0.0",
+  "description": "Moustache Milk & Cookies Shopify Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aboutjax/benny.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aboutjax/benny/issues"
+  },
+  "homepage": "https://github.com/aboutjax/benny#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
