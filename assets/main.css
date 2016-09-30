@@ -390,7 +390,8 @@ hr {
   padding: 0; }
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+  font-family: 'roboto', 'helvetica neue', sans-serif; }
 
 .c-header {
   height: 12rem;
@@ -398,6 +399,8 @@ html {
   align-items: center; }
 
 .c-header__cart {
-  padding: 0.8rem;
+  padding: 0.8rem 1.2rem;
   background: #3B342F;
-  color: #fff; }
+  color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 -0.3rem 0 0 #1f1b18; }
