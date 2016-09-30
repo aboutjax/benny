@@ -1,3 +1,7 @@
+// Reset with Normalize
+@import "./node_modules/normalize.css/normalize";
+
+// Project Styles with ITCSS
 @import "settings/index";
 @import "tools/index";
 @import "generic/index";

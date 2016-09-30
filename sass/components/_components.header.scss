@@ -1,3 +1,11 @@
 .c-header {
   height: 12rem;
+  display: flex;
+  align-items: center;
+}
+
+.c-header__cart {
+  padding: $spacing-xs;
+  background: $colour-text;
+  color: $colour-white;
 }

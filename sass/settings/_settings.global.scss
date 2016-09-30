@@ -1,0 +1,29 @@
+// Spacing
+// ----------------------------------------------------------------------------
+
+$base-spacing-unit:     1.6rem !default; // 16px
+
+$spacing-grid:          4rem !default;
+
+$spacing:               $base-spacing-unit;
+
+$padding:               $base-spacing-unit * 2;
+
+// Smaller
+$spacing-s: ($spacing * .75);
+$spacing-xs: ($spacing / 2);
+$spacing-xxs: ($spacing / 4);
+
+// Larger
+$spacing-l: ($spacing * 1.5);
+$spacing-xl: ($spacing * 2);
+$spacing-xxl: ($spacing * 3);
+
+
+// Others
+// ----------------------------------------------------------------------------
+
+$base-transition:       all .1s ease-in;
+
+$ease:                  cubic-bezier(.43, .11, .41, 1);
+$easing-circ:           cubic-bezier(.075, .82, .165, 0);
