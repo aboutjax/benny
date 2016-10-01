@@ -1,0 +1,20 @@
+.c-btn {
+  padding: $spacing-s $spacing-l;
+  background: $colour-text;
+  color: $colour-white;
+  border-radius: $global-border-radius;
+  font-weight: 600;
+
+  &:hover {
+    opacity: .9;
+    color: $colour-white;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  &__neutral {
+    background: $colour-suplementary;
+  }
+}

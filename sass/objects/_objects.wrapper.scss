@@ -1,0 +1,10 @@
+.l-wrapper {
+  padding: 0 $spacing-xxl;
+  max-width: 118rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet {
+    padding: 0 $spacing-xl;
+  };
+}

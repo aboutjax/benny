@@ -1,13 +1,40 @@
 .c-header {
-  height: 12rem;
-  display: flex;
-  align-items: center;
+  background: $colour-brand;
+
+  &__wrapper {
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet {
+      height: 8rem;
+      justify-content: center;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    max-width: 30rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__cart-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: $colour-white;
+    margin-right: $spacing-s;
+  }
 }
 
-.c-header__cart {
-  padding: $spacing-xs $spacing-s;
-  background: $colour-text;
-  color: $colour-white;
-  border-radius: $global-border-radius;
-  box-shadow: inset 0 -.3rem 0 0 darken($colour-text, 10);
+.cart-button-spacer {
+  margin: 0 $spacing-xs;
+}
+
+.cart-button__item-count {
+  margin-right: $spacing-xxs;
 }

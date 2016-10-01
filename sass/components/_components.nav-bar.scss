@@ -1,0 +1,46 @@
+.c-nav-bar {
+
+  @include tablet {
+    background: lighten($colour-brand, 5);
+  }
+
+  &__wrapper {
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      height: 6rem;
+    }
+  }
+
+  &__links {
+    border-bottom: 1px solid $colour-framing;
+  }
+
+  &__customer {
+    // Empty
+  }
+
+  &__mobile-links {
+    margin: 0;
+  }
+
+  &__cart {
+    margin-right: $spacing-s;
+
+    @include tablet {
+      margin-right: $spacing-xs;
+    };
+  }
+
+  &__menu-button {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-icon {
+    fill: $colour-text;
+  }
+}

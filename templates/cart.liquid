@@ -114,9 +114,9 @@
             <span class="cart-subtotal__savings"><em>{{ 'cart.general.savings_html' | t: price: savings }}</em></span>
           </p>
         {% endif %}
-        <p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
-        <button type="submit" name="update" class="btn--secondary update-cart">{{ 'cart.general.update' | t }}</button>
-        <button type="submit" name="checkout" class="btn">{{ 'cart.general.checkout' | t }}</button>
+        <p class="t-supplementary l-cart-shipping-description">{{ 'cart.general.shipping_at_checkout' | t }}</p>
+        <button type="submit" name="update" class="c-btn c-btn__neutral update-cart">{{ 'cart.general.update' | t }}</button>
+        <button type="submit" name="checkout" class="c-btn">{{ 'cart.general.checkout' | t }}</button>
       </div>
     </div>
   </form>
