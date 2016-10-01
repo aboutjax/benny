@@ -9,8 +9,8 @@
 
 {% if cart.item_count > 0 %}
 
-  <h1>{{ 'cart.general.title' | t }}</h1>
-  <form action="/cart" method="post" novalidate class="cart table-wrap">
+  <h1 class="l-page-header">{{ 'cart.general.title' | t }}</h1>
+  <form action="/cart" method="post" class="cart table-wrap">
     <table class="cart-table full table--responsive">
       <thead class="cart__row cart__header-labels">
         <th colspan="2" class="text-center">{{ 'cart.label.product' | t }}</th>
@@ -97,6 +97,10 @@
       </tbody>
     </table>
     <div class="grid cart__row">
+      <div class="l-cart__delivery-date-wrapper">
+      <label for="delivery-date">Pick a delivery date:</label>
+      <input type="date" name="attributes[delivery-date]" data-error="Please tell us your info." value="{{ cart.attributes.delivery-date }}" required="required" />
+    </div>
       {% if settings.cart_notes_enable %}
         <div class="grid__item two-thirds small--one-whole">
           <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>

@@ -2,7 +2,7 @@
   background: $colour-brand;
 
   &__wrapper {
-    height: 12rem;
+    height: 7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,21 +17,18 @@
     display: flex;
     align-items: center;
     max-width: 30rem;
-
-    @include tablet {
-      display: none;
-    }
   }
 
   &__cart-icon {
     width: 2.4rem;
     height: 2.4rem;
-    fill: $colour-white;
     margin-right: $spacing-s;
+    fill: $colour-text;
   }
 }
 
 .cart-button-spacer {
+  opacity: .3;
   margin: 0 $spacing-xs;
 }
 

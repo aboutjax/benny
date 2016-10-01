@@ -1,7 +1,41 @@
+$base-font-size: 1.6rem;
+$body-font-stack: 'roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-stack: 'roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 .t-paragraph {
   color: $colour-text;
 }
 
 .t-supplementary {
   color: $colour-suplementary;
+}
+
+/*============================================================================
+  #Typography
+==============================================================================*/
+body,
+input,
+textarea,
+button,
+select {
+  font-size: $base-font-size;
+  line-height: 1.6;
+  font-family: $body-font-stack;
+  color: $colour-text;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-family: $header-font-stack;
+  font-weight: 600;
+  margin: 0 0 0.5em;
+  line-height: 1.4;
+
+  a {
+    text-decoration: none;
+    font-weight: inherit;
+  }
 }

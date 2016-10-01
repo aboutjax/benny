@@ -1,8 +1,15 @@
-<a href="/cart" class="c-btn c-header__cart site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+{% if cart.item_count > 0 %}
+  <a href="/cart" class="c-header__cart site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+    {% include 'svg', icon_name: 'cart', icon_class: 'c-header__cart-icon' %}
+    <!-- {{ 'layout.cart.title' | t }} -->
+    <span id="CartCount" class="cart-button__item-count">{{ cart.item_count }}</span>
+    {{ 'layout.cart.items_count' | t: count: cart.item_count }}
+    <span class="cart-button-spacer">•</span>
+    <span id="CartCost">{{ cart.total_price | money }} </span>
+  </a>
+{% else %}
+<a href="/cart" class="c-header__cart">
   {% include 'svg', icon_name: 'cart', icon_class: 'c-header__cart-icon' %}
-  <!-- {{ 'layout.cart.title' | t }} -->
-  <span id="CartCount" class="cart-button__item-count">{{ cart.item_count }}</span>
-  {{ 'layout.cart.items_count' | t: count: cart.item_count }}
-  <span class="cart-button-spacer"></span>
-  <span id="CartCost">{{ cart.total_price | money }} </span>
+  Your cart is empty
 </a>
+{% endif %}

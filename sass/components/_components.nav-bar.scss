@@ -1,4 +1,5 @@
 .c-nav-bar {
+background: lighten($colour-brand, 5);
 
   @include tablet {
     background: lighten($colour-brand, 5);
@@ -16,7 +17,7 @@
   }
 
   &__links {
-    border-bottom: 1px solid $colour-framing;
+    // border-bottom: 1px solid $colour-framing;
   }
 
   &__customer {
@@ -42,5 +43,9 @@
 
   &__menu-icon {
     fill: $colour-text;
+  }
+
+  .site-nav__active {
+    border-bottom: 1px solid;
   }
 }

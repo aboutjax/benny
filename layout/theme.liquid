@@ -184,7 +184,9 @@
         - #cartCost updates the total cost of the cart
         - Documentation:  http://shopify.com/timber#ajax-cart
         {% endcomment %}
-        {% include 'cart-button' %}
+        <div class="medium-down--hide">
+          {% include 'cart-button' %}
+        </div>
       </div>
 
     </header>
@@ -244,10 +246,12 @@
                   {% else %}
                     <a href="/account">{{ 'layout.customer.account' | t }}</a>
                   {% endif %}
-                  | {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                  <span class="cart-button-spacer">•</span>
+                  {{ 'layout.customer.log_out' | t | customer_logout_link }}
                 {% else %}
                   {{ 'layout.customer.log_in' | t | customer_login_link }}
-                  | {{ 'layout.customer.create_account' | t | customer_register_link }}
+                  <span class="cart-button-spacer">•</span>
+                  {{ 'layout.customer.create_account' | t | customer_register_link }}
                 {% endif %}
               </div>
             {% endif %}
@@ -261,12 +265,7 @@
           </button>
         </div>
         <div class="c-nav-bar__mobile-links site-nav--mobile large--hide medium-down--show">
-          <a class="c-nav-bar__cart" href="/cart" aria-controls="CartDrawer" aria-expanded="false">
-            {{ 'layout.cart.title' | t }}
-            (<span id="CartCount">{{ cart.item_count }}</span>
-            {{ 'layout.cart.items_count' | t: count: cart.item_count }}
-            <span id="CartCost">{{ cart.total_price | money }}</span>)
-          </a>
+          {% include 'cart-button' %}
         </div>
       </div>
     </nav>
