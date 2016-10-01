@@ -11,9 +11,9 @@
 
   <h1 class="l-page-header">{{ 'cart.general.title' | t }}</h1>
   <form action="/cart" method="post" class="cart table-wrap">
-    <table class="cart-table full table--responsive">
+    <table class="c-cart-table cart-table full">
       <thead class="cart__row cart__header-labels">
-        <th colspan="2" class="text-center">{{ 'cart.label.product' | t }}</th>
+        <th colspan="2" class="text-left">{{ 'cart.label.product' | t }}</th>
         <th class="text-center">{{ 'cart.label.price' | t }}</th>
         <th class="text-center">{{ 'cart.label.quantity' | t }}</th>
         <th class="text-right">{{ 'cart.label.total' | t }}</th>
@@ -27,7 +27,7 @@
                   More image size options at:
                     - http://docs.shopify.com/themes/filters/product-img-url
                 {% endcomment %}
-                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+                <img src="{{ item | img_url: '60x' }}" alt="{{ item.title | escape }}">
               </a>
             </td>
             <td>
@@ -79,7 +79,7 @@
               </span>
             </td>
             <td data-label="{{ 'cart.label.quantity' | t }}">
-              <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
+              <input class="c-cart-table__quantity-input" type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
             </td>
             <td data-label="{{ 'cart.label.total' | t }}" class="text-right">
               {% if item.original_line_price != item.line_price %}
@@ -96,27 +96,30 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="grid cart__row">
-      <div class="l-cart__delivery-date-wrapper">
-      <label for="delivery-date">Pick a delivery date:</label>
-      <input type="date" name="attributes[delivery-date]" data-error="Please tell us your info." value="{{ cart.attributes.delivery-date }}" required="required" />
-    </div>
-      {% if settings.cart_notes_enable %}
-        <div class="grid__item two-thirds small--one-whole">
-          <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-          <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+    <div class="l-cart-actions">
+      <div class="l-cart-actions__attributes">
+        <div class="l-cart-actions__delivery-date">
+          <label for="delivery-date">When do you need this by?</label>
+          <input type="date" name="attributes[delivery-date]" data-error="Please tell us your info." value="{{ cart.attributes.delivery-date }}" required="required" />
         </div>
-      {% endif %}
-      <div class="grid__item text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
+        {% if settings.cart_notes_enable %}
+        <div class="l-cart-actions__instructions">
+          <!-- <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label> -->
+          <label for="CartSpecialInstructions">Do you have any specific instructions?</label>
+          <textarea placeholder="e.g. I want to write happy birthday on this giant cookie..." name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+        </div>
+        {% endif %}
+      </div>
+      <div class="l-cart-actions__totals">
         <p>
           <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
           <span class="h3 cart__subtotal">{{ cart.total_price | money }}</span>
         </p>
         {% if cart.total_discounts > 0 %}
-          {% assign savings = cart.total_discounts | money %}
-          <p>
-            <span class="cart-subtotal__savings"><em>{{ 'cart.general.savings_html' | t: price: savings }}</em></span>
-          </p>
+        {% assign savings = cart.total_discounts | money %}
+        <p>
+          <span class="cart-subtotal__savings"><em>{{ 'cart.general.savings_html' | t: price: savings }}</em></span>
+        </p>
         {% endif %}
         <p class="t-supplementary l-cart-shipping-description">{{ 'cart.general.shipping_at_checkout' | t }}</p>
         <button type="submit" name="update" class="c-btn c-btn__neutral update-cart">{{ 'cart.general.update' | t }}</button>

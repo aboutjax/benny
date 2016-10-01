@@ -390,7 +390,8 @@ hr {
   padding: 0; }
 
 .t-paragraph {
-  color: #3B342F; }
+  color: #3B342F;
+  line-height: 1.6; }
 
 .t-supplementary {
   color: #9B9B9B; }
@@ -404,7 +405,6 @@ textarea,
 button,
 select {
   font-size: 1.6rem;
-  line-height: 1.6;
   font-family: "roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3B342F;
   font-weight: 300;
@@ -414,7 +414,7 @@ select {
 h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: "roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   margin: 0 0 0.5em;
   line-height: 1.4; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -436,13 +436,40 @@ html {
 .l-cart-shipping-description {
   margin-bottom: 1.5rem; }
 
+.l-cart-actions {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  background: #F5F5F5; }
+  .l-cart-actions__delivery-date {
+    margin-bottom: 2rem; }
+  .l-cart-actions__attributes, .l-cart-actions__totals {
+    width: 50%; }
+    @media (max-width: 768px) {
+      .l-cart-actions__attributes, .l-cart-actions__totals {
+        width: 100%; } }
+  .l-cart-actions__totals {
+    text-align: right; }
+
+@media (max-width: 768px) {
+  .c-cart-table {
+    font-size: 1.4rem; }
+    .c-cart-table td {
+      padding: 1.5rem 0.75rem; }
+    .c-cart-table .h4,
+    .c-cart-table .h3 {
+      font-size: 16px; } }
+
+.c-cart-table__quantity-input {
+  max-width: 8rem; }
+
 .l-page-header {
   margin-bottom: 1.5rem; }
 
 .c-header {
   background: #FCF1D9; }
   .c-header__wrapper {
-    height: 7rem;
+    height: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between; }
@@ -477,13 +504,13 @@ html {
     .c-nav-bar {
       background: #fefaf1; } }
   .c-nav-bar__wrapper {
-    height: 7rem;
+    font-size: 1.4rem;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center; }
-    @media (max-width: 768px) {
-      .c-nav-bar__wrapper {
-        height: 6rem; } }
+  .c-nav-bar__link {
+    color: #9B9B9B; }
   .c-nav-bar__mobile-links {
     margin: 0; }
   .c-nav-bar__cart {
@@ -498,6 +525,10 @@ html {
     fill: #3B342F; }
   .c-nav-bar .site-nav__active {
     border-bottom: 1px solid; }
+
+.site-nav--active .site-nav__link {
+  color: #3B342F;
+  font-weight: 600; }
 
 .c-btn {
   padding: 0.75rem 1.5rem;
@@ -520,4 +551,8 @@ html {
   margin-bottom: 3rem; }
 
 .product-single__photos {
-  border: 1px solid #F5F5F5; }
+  background-color: #F5F5F5; }
+
+.c-table th,
+.c-table td {
+  padding: 0.75rem; }

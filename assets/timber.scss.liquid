@@ -144,10 +144,10 @@ $zindexDrawer: 10;
 
 /*================ Typography ================*/
 
-$headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerFontWeight: 700;
+$headerFontStack: 'roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headerFontWeight: 300;
 
-$bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$bodyFontStack: 'roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $baseFontSize: 14px; // Henceforth known as 1em
 
 @font-face {
@@ -935,6 +935,7 @@ hr {
 /*================ Section Headers ================*/
 .section-header {
   margin-bottom: $gutter / 1.5;
+  margin-top: $gutter / 1.5;
 }
 
 @include at-query ($min, $large) {

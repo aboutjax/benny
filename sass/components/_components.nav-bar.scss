@@ -6,18 +6,15 @@ background: lighten($colour-brand, 5);
   }
 
   &__wrapper {
-    height: 7rem;
+    font-size: 1.4rem;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include tablet {
-      height: 6rem;
-    }
   }
 
-  &__links {
-    // border-bottom: 1px solid $colour-framing;
+  &__link {
+    color: $colour-suplementary;
   }
 
   &__customer {
@@ -47,5 +44,13 @@ background: lighten($colour-brand, 5);
 
   .site-nav__active {
     border-bottom: 1px solid;
+  }
+}
+
+// Overriding Active states of the nav link
+.site-nav--active {
+  .site-nav__link {
+    color: $colour-text;
+    font-weight: 600;
   }
 }
