@@ -1,0 +1,42 @@
+.c-preloader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background: transparentize($colour-white, .05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+.loaded {
+  .c-preloader {
+    display: none;
+  }
+}
+
+.no-js {
+  .c-preloader {
+    display: none;
+  }
+}
+
+.c-preloader__icon {
+  width: 6rem;
+  height: 2rem;
+  fill: $colour-text;
+  animation: wiggle .4s cubic-bezier(0.250, 0.460, 0.305, 1) infinite;
+  animation-direction: alternate;
+}
+
+@keyframes wiggle {
+  from {transform: scaleX(.9);}
+  to {transform: scaleX(1);}
+}

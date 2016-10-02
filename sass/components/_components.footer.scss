@@ -1,0 +1,64 @@
+.c-footer {
+  background-color: $colour-footer-bg;
+  padding: $spacing-xxl;
+
+  .l-wrapper {
+    min-height: 10rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .payment-icons .icon {
+    font-size: 20px;
+  }
+
+  .payment-icons {
+    display: flex;
+    max-width: 40rem;
+    flex-wrap: wrap;
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  .payment-icons li {
+    margin: $spacing-s;
+  }
+
+  &__accepted-payment-types {
+    @include tablet {
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  &__social {
+    fill: $colour-white;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 $spacing-s;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -10,6 +10,8 @@
 
   &__delivery-date {
     margin-bottom: $spacing-xl;
+    display: flex;
+    flex-direction: column;
   }
 
   &__attributes,

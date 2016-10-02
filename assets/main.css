@@ -407,14 +407,20 @@ select {
   font-size: 1.6rem;
   font-family: "roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3B342F;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  line-height: initial;
+  min-height: 4rem; }
+
+label {
+  display: block;
+  margin-bottom: 0.75rem; }
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: "roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0 0 0.5em;
   line-height: 1.4; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -423,6 +429,10 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
   font-size: 10px; }
+
+html,
+body {
+  min-height: 100vh; }
 
 .l-wrapper {
   padding: 0 3rem;
@@ -442,7 +452,9 @@ html {
   padding: 1.5rem;
   background: #F5F5F5; }
   .l-cart-actions__delivery-date {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column; }
   .l-cart-actions__attributes, .l-cart-actions__totals {
     width: 50%; }
     @media (max-width: 768px) {
@@ -465,6 +477,21 @@ html {
 
 .l-page-header {
   margin-bottom: 1.5rem; }
+
+.l-main-content {
+  min-height: 90vh; }
+
+.l-stores {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; }
+  @media (max-width: 768px) {
+    .l-stores {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center; } }
 
 .c-header {
   background: #FCF1D9; }
@@ -545,7 +572,8 @@ html {
     background: #9B9B9B; }
 
 .c-product-card__title {
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  font-weight: 400; }
 
 .c-product-card__meta {
   margin-bottom: 3rem; }
@@ -556,3 +584,145 @@ html {
 .c-table th,
 .c-table td {
   padding: 0.75rem; }
+
+.c-footer {
+  background-color: #3D3C3B;
+  padding: 3rem; }
+  .c-footer .l-wrapper {
+    min-height: 10rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; }
+  .c-footer .payment-icons .icon {
+    font-size: 20px; }
+  .c-footer .payment-icons {
+    display: flex;
+    max-width: 40rem;
+    flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .c-footer .payment-icons {
+        justify-content: center; } }
+  .c-footer .payment-icons li {
+    margin: 0.75rem; }
+  @media (max-width: 768px) {
+    .c-footer__accepted-payment-types {
+      flex-grow: 1;
+      justify-content: center; } }
+  .c-footer__socials {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end; }
+    @media (max-width: 768px) {
+      .c-footer__socials {
+        justify-content: center; } }
+  .c-footer__social {
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0.75rem;
+    opacity: .7; }
+    .c-footer__social:hover {
+      opacity: 1; }
+    .c-footer__social:last-child {
+      margin-right: 0; }
+
+.c-preloader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .c-preloader h1 {
+    font-size: 5rem; }
+
+.loaded .c-preloader {
+  display: none; }
+
+.no-js .c-preloader {
+  display: none; }
+
+.c-preloader__icon {
+  width: 6rem;
+  height: 2rem;
+  fill: #3B342F;
+  animation: wiggle 0.4s cubic-bezier(0.25, 0.46, 0.305, 1) infinite;
+  animation-direction: alternate; }
+
+@keyframes wiggle {
+  from {
+    transform: scaleX(0.9); }
+  to {
+    transform: scaleX(1); } }
+
+.c-outlet-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+  min-width: 33.33333%;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; }
+  .c-outlet-card td {
+    border: 0; }
+
+.c-outlet-card__text {
+  text-align: center;
+  margin-top: 0; }
+
+.c-outlet-card__illustration {
+  width: 80%; }
+
+.c-outlet-card__top {
+  width: 100%;
+  padding-top: 0.75rem;
+  border-bottom: 1px solid transparent; }
+
+.c-outlet-card__hours__row {
+  height: 3rem; }
+
+.c-outlet-card__name {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem; }
+
+.c-outlet-card__address {
+  font-size: 1.4rem;
+  opacity: 0.5;
+  letter-spacing: 0.12rem;
+  margin-bottom: 5rem;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+.c-outlet-card__hours {
+  padding: 4rem;
+  letter-spacing: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  width: 80%; }
+  .c-outlet-card__hours .hours {
+    text-align: right; }
+
+.c-outlet-card__ampm {
+  font-size: 1rem; }
+
+.c-outlet-card__email-icon {
+  width: 4rem;
+  height: 4rem; }

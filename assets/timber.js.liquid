@@ -492,5 +492,9 @@ timber.Drawers = (function () {
   return Drawer;
 })();
 
+window.onload = function() {
+    $('body').addClass('loaded');
+}
+
 // Initialize Timber's JS on docready
 $(timber.init);

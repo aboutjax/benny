@@ -55,7 +55,9 @@
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
-    {% include 'sprite' %}
+  {% include 'preloader' %}
+
+  {% include 'sprite' %}
 
   <div id="NavDrawer" class="drawer drawer--left">
     <div class="drawer__header">
@@ -270,14 +272,46 @@
       </div>
     </nav>
 
-    <main class="wrapper main-content" role="main">
+    <main class="wrapper main-content l-main-content" role="main">
 
       {{ content_for_layout }}
 
     </main>
 
-    <footer>
-      footer content
+    <footer class="c-footer">
+      <div class="l-wrapper">
+        <div class="c-footer__accepted-payment-types">
+          {% comment %}
+          Loop through available payment methods and show their icons.
+          {% endcomment %}
+          {% unless shop.enabled_payment_types == empty %}
+          {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
+          <ul class="inline-list payment-icons">
+            {% for type in shop.enabled_payment_types %}
+            {% if payment_icons_available contains type %}
+            <li>
+              <span class="icon-fallback-text">
+                <span class="icon icon-{{type}}" aria-hidden="true"></span>
+                <span class="fallback-text">{{ type | replace: '_',' '}}</span>
+              </span>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          {% endunless %}
+        </div>
+        <div class="c-footer__socials">
+          <a class="c-footer__social" href="https://facebook.com/moustachenz">
+            {% include 'svg', icon_name: 'facebook', icon_class: 'c-footer__social' %}
+          </a>
+          <a class="c-footer__social" href="https://instagram.com/moustachenz">
+            {% include 'svg', icon_name: 'instagram', icon_class: 'c-footer__social' %}
+          </a>
+          <a class="c-footer__social" href="https://twitter.com/moustachenz">
+            {% include 'svg', icon_name: 'twitter', icon_class: 'c-footer__social' %}
+          </a>
+        </div>
+      </div>
     </footer>
   </div>
 
