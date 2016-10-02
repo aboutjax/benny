@@ -131,7 +131,11 @@
   {% comment %}
     The cart is empty
   {% endcomment %}
-  <h2>{{ 'cart.general.title' | t }}</h2>
-  <p>{{ 'cart.general.empty' | t }}</p>
-  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  <div class="l-cart__empty-message">
+    <div class="c-message-panel">
+      <img class="c-message-panel__image" src="{{'empty-cart-illustration.png' | asset_url }}" alt="">
+      <h3 class="c-message-panel__header">Your cart is currently empty</h3>
+      <p class="t-supplementary">Please continue browsing for cookies <a href="/">here</a></p>
+    </div>
+  </div>
 {% endif %}

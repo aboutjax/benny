@@ -475,6 +475,11 @@ body {
 .c-cart-table__quantity-input {
   max-width: 8rem; }
 
+.l-cart__empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .l-page-header {
   margin-bottom: 1.5rem; }
 
@@ -726,3 +731,19 @@ body {
 .c-outlet-card__email-icon {
   width: 4rem;
   height: 4rem; }
+
+.c-message-panel {
+  padding: 3rem;
+  width: 100%;
+  min-height: 50rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+  @media (max-width: 768px) {
+    .c-message-panel__header {
+      font-size: 2rem; } }
+  .c-message-panel__image {
+    max-width: 15rem;
+    margin-bottom: 3rem; }

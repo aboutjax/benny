@@ -47,3 +47,9 @@
 .c-cart-table__quantity-input {
   max-width: 8rem;
 }
+
+.l-cart__empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
