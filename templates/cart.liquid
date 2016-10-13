@@ -98,16 +98,17 @@
     </table>
     <div class="l-cart-actions">
       <div class="l-cart-actions__attributes">
+        <label class="l-cart-actions__label">Choose a delivery method</label>
         <div class="c-tabs">
           <div class="c-tab">
-            <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="pickup" checked>
+            <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="pickup">
             <label class="c-tab__label" for="pickup">Pick Up</label>
             <div class="c-tab__content">
               {% include 'pickup-date' %}
             </div>
           </div>
           <div class="c-tab">
-            <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="delivery">
+            <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="delivery" checked>
             <label class="c-tab__label" for="delivery">Delivery</label>
             <div class="c-tab__content">
               {% include 'delivery-date' %}

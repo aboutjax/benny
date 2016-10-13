@@ -5,7 +5,7 @@
 .l-cart-actions {
   display: flex;
   flex-wrap: wrap;
-  padding: $spacing-l;
+  padding: $spacing-xl $spacing-l;
   background: $colour-framing;
 
   &__dates {
@@ -22,10 +22,15 @@
     flex-direction: column;
   }
 
-  &__delivery-date__disclaimer {
+  &__date-disclaimer {
     margin: $spacing 0;
     font-size: 1.3rem;
     font-style: italic;
+  }
+
+  &__date-input {
+    width: 100%;
+    cursor: pointer;
   }
 
   &__label {
@@ -52,7 +57,7 @@
 .c-tabs {
   position: relative;
   width: 100%;
-  min-height: 16rem;
+  min-height: 12rem;
 }
 
 .c-tab {
@@ -104,6 +109,11 @@
       font-size: 16px;
     }
   };
+}
+
+// Date Picker Override
+.ui-widget-header {
+  background: #333;
 }
 
 .c-cart-table__quantity-input {

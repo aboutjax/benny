@@ -2,9 +2,8 @@
 {{ '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js' | script_tag }}
 
 <div class="l-cart-actions__date">
-    <h3 class="l-cart-actions__delivery-date__disclaimer">Please give us at least 16 hours notice. Our courier can't deliver on weekends.</h3>
-    <label class="l-cart-actions__label" for="date">Choose a delivery date:</label>
-    <input required id="delivery-date" type="text" name="attributes[deliverydate]" value="{{ cart.attributes.delivery-date }}" />
+    <h3 class="l-cart-actions__date-disclaimer">Please give us at least 16 hours notice. Our courier can't deliver on weekends.</h3>
+    <input class="l-cart-actions__date-input" id="delivery-date" placeholder="Select a delivery date" type="text" name="attributes[delivery-date]" data-error="Please select a delivery date." value="{{ cart.attributes.delivery-date }}" />
 </div>
 
 <script>
@@ -14,6 +13,25 @@ jQuery(function() {
     maxDate: '+2M',
     beforeShowDay: jQuery.datepicker.noWeekends
   } );
+});
+
+jQuery(function() {
+  jQuery("#pickup-date").datepicker( {
+    minDate: +0,
+    maxDate: '+2M'
+  } );
+});
+
+jQuery("#delivery-date").click(function() {
+  jQuery("#delivery-date").attr('required', 'required');
+  jQuery("#pickup-date").removeAttr('required');
+  jQuery('#pickup-date').val('');
+});
+
+jQuery("#pickup-date").click(function() {
+  jQuery("#pickup-date").attr('required', 'required');
+  jQuery("#delivery-date").removeAttr('required');
+  jQuery('#delivery-date').val('');
 });
 </script>
 

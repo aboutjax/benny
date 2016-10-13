@@ -452,7 +452,7 @@ a:hover {
 .l-cart-actions {
   display: flex;
   flex-wrap: wrap;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: #F5F5F5; }
   .l-cart-actions__dates {
     display: flex; }
@@ -462,10 +462,13 @@ a:hover {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column; }
-  .l-cart-actions__delivery-date__disclaimer {
+  .l-cart-actions__date-disclaimer {
     margin: 1rem 0;
     font-size: 1.3rem;
     font-style: italic; }
+  .l-cart-actions__date-input {
+    width: 100%;
+    cursor: pointer; }
   .l-cart-actions__label {
     font-weight: bold; }
   .l-cart-actions__attributes, .l-cart-actions__totals {
@@ -479,7 +482,7 @@ a:hover {
 .c-tabs {
   position: relative;
   width: 100%;
-  min-height: 16rem; }
+  min-height: 12rem; }
 
 .c-tab {
   float: left; }
@@ -512,6 +515,9 @@ a:hover {
     .c-cart-table .h4,
     .c-cart-table .h3 {
       font-size: 16px; } }
+
+.ui-widget-header {
+  background: #333; }
 
 .c-cart-table__quantity-input {
   max-width: 8rem; }
