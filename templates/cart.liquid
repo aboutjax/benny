@@ -98,15 +98,26 @@
     </table>
     <div class="l-cart-actions">
       <div class="l-cart-actions__attributes">
-        <div class="l-cart-actions__delivery-date">
-          <label for="delivery-date">When do you need this by?</label>
-          <input type="date" name="attributes[delivery-date]" data-error="Please tell us your info." value="{{ cart.attributes.delivery-date }}" required="required" />
+        <div class="c-tabs">
+          <div class="c-tab">
+            <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="pickup" checked>
+            <label class="c-tab__label" for="pickup">Pick Up</label>
+            <div class="c-tab__content">
+              {% include 'pickup-date' %}
+            </div>
+          </div>
+          <div class="c-tab">
+            <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="delivery">
+            <label class="c-tab__label" for="delivery">Delivery</label>
+            <div class="c-tab__content">
+              {% include 'delivery-date' %}
+            </div>
+          </div>
         </div>
         {% if settings.cart_notes_enable %}
         <div class="l-cart-actions__instructions">
-          <!-- <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label> -->
-          <label for="CartSpecialInstructions">Do you have any specific instructions?</label>
-          <textarea placeholder="e.g. I want to write happy birthday on this giant cookie..." name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          <label class="l-cart-actions__label" for="CartSpecialInstructions">Do you have any specific instructions?</label>
+          <textarea placeholder="e.g. I want to write happy birthday on this giant cookie/cake... I need this before 3pm." name="note" class="l-cart-actions__instruction-text-area" id="CartSpecialInstructions">{{ cart.note }}</textarea>
         </div>
         {% endif %}
       </div>
