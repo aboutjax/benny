@@ -454,10 +454,6 @@ a:hover {
   flex-wrap: wrap;
   padding: 2rem 1.5rem;
   background: #F5F5F5; }
-  .l-cart-actions__dates {
-    display: flex; }
-  .l-cart-actions__date {
-    flex-basis: 50%; }
   .l-cart-actions__delivery-date {
     margin-bottom: 2rem;
     display: flex;
@@ -482,7 +478,7 @@ a:hover {
 .c-tabs {
   position: relative;
   width: 100%;
-  min-height: 12rem; }
+  min-height: 16rem; }
 
 .c-tab {
   float: left; }
@@ -494,7 +490,8 @@ a:hover {
   .c-tab__radio-input:checked ~ .c-tab__content {
     display: block;
     position: absolute;
-    left: 0; }
+    left: 0;
+    width: 100%; }
 
 .l-cart-actions__instruction-text-area {
   line-height: 1.6;
