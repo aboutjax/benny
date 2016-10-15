@@ -434,7 +434,7 @@ html,
 body {
   min-height: 100vh; }
 
-a {
+a:hover {
   text-decoration: underline; }
 
 .l-wrapper {
@@ -452,12 +452,21 @@ a {
 .l-cart-actions {
   display: flex;
   flex-wrap: wrap;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: #F5F5F5; }
   .l-cart-actions__delivery-date {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column; }
+  .l-cart-actions__date-disclaimer {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    font-style: italic; }
+  .l-cart-actions__date-input {
+    width: 100%;
+    cursor: pointer; }
+  .l-cart-actions__label {
+    font-weight: bold; }
   .l-cart-actions__attributes, .l-cart-actions__totals {
     width: 50%; }
     @media (max-width: 768px) {
@@ -465,6 +474,35 @@ a {
         width: 100%; } }
   .l-cart-actions__totals {
     text-align: right; }
+
+.c-tabs {
+  position: relative;
+  width: 100%;
+  min-height: 16rem; }
+
+.c-tab {
+  float: left; }
+  .c-tab + .c-tab {
+    margin-left: 1.5rem; }
+
+.c-tab__radio-input {
+  display: block; }
+  .c-tab__radio-input:checked ~ .c-tab__content {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%; }
+
+.l-cart-actions__instruction-text-area {
+  line-height: 1.6;
+  width: 100%;
+  min-height: 10rem; }
+
+.c-tab__label {
+  display: inline-block; }
+
+.c-tab__content {
+  display: none; }
 
 @media (max-width: 768px) {
   .c-cart-table {
@@ -474,6 +512,9 @@ a {
     .c-cart-table .h4,
     .c-cart-table .h3 {
       font-size: 16px; } }
+
+.ui-widget-header {
+  background: #333; }
 
 .c-cart-table__quantity-input {
   max-width: 8rem; }
@@ -650,7 +691,7 @@ a {
   right: 0;
   left: 0;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
