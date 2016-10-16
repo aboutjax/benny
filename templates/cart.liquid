@@ -117,10 +117,36 @@
         </div>
         {% if settings.cart_notes_enable %}
         <div class="l-cart-actions__instructions">
-          <label class="l-cart-actions__label" for="CartSpecialInstructions">Do you have any specific instructions?</label>
-          <textarea placeholder="e.g. I want to write happy birthday on this giant cookie/cake... I need this before 3pm." name="note" class="l-cart-actions__instruction-text-area" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          <label class="l-cart-actions__label" for="CartSpecialInstructions">Specific instructions (optional)</label>
+          <textarea placeholder="I need this before 3pm." name="note" class="l-cart-actions__instruction-text-area" id="CartSpecialInstructions">{{ cart.note }}</textarea>
         </div>
         {% endif %}
+        {% comment %}
+          Loop through cart items to see if any of the product has the tag "custom cookie message",
+          if there is, then display a custom text area for cart attribute.
+        {% endcomment %}
+        {% for item in cart.items %}
+        {% if item.product.tags contains "custom cookie message" %}
+        <div class="l-cart-actions__instructions">
+          <label class="l-cart-actions__label" for="customCookieMessage">Custom message on the cookie (optional)</label>
+          <textarea placeholder="Please write happy birthday on the cookie" name="attributes[custom-cookie-message]" class="l-cart-actions__instruction-text-area" id="customCookieMessage" value="{{ cart.attributes.custom-cookie-message }}">{{ cart.attributes.custom-cookie-message }}</textarea>
+        </div>
+        {% break %}
+        {% endif %}
+        {% endfor %}
+        {% comment %}
+          Loop through cart items to see if any of the product has the tag "custom box message",
+          if there is, then display a custom text area for cart attribute.
+        {% endcomment %}
+        {% for item in cart.items %}
+        {% if item.product.tags contains "custom box message" %}
+        <div class="l-cart-actions__instructions">
+          <label class="l-cart-actions__label" for="customBoxMessage">Custom message on the box (optional)</label>
+          <textarea placeholder="Please write happy birthday on the box" name="attributes[custom-box-message]" class="l-cart-actions__instruction-text-area" id="customBoxMessage" value="{{ cart.attributes.custom-box-message }}">{{ cart.attributes.custom-box-message }}</textarea>
+        </div>
+        {% break %}
+        {% endif %}
+        {% endfor %}
       </div>
       <div class="l-cart-actions__totals">
         <p>

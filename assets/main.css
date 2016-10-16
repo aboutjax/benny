@@ -476,12 +476,16 @@ a:hover {
     text-align: right; }
 
 .c-tabs {
+  padding-top: 0.75rem;
   position: relative;
   width: 100%;
-  min-height: 16rem; }
+  min-height: 14rem;
+  margin-bottom: 2rem; }
 
 .c-tab {
-  float: left; }
+  float: left;
+  display: flex;
+  align-items: center; }
   .c-tab + .c-tab {
     margin-left: 1.5rem; }
 
@@ -493,16 +497,21 @@ a:hover {
     left: 0;
     width: 100%; }
 
+.l-cart-actions__instructions {
+  margin-bottom: 2rem; }
+
 .l-cart-actions__instruction-text-area {
-  line-height: 1.6;
+  line-height: 1.4;
   width: 100%;
   min-height: 10rem; }
 
 .c-tab__label {
+  margin: 0;
   display: inline-block; }
 
 .c-tab__content {
-  display: none; }
+  display: none;
+  margin-top: 6rem; }
 
 @media (max-width: 768px) {
   .c-cart-table {
