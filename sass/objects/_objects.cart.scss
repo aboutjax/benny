@@ -51,13 +51,17 @@
 // Delivery Method Tabs
 
 .c-tabs {
+  padding-top: $spacing-s;
   position: relative;
   width: 100%;
-  min-height: 16rem;
+  min-height: 14rem;
+  margin-bottom: $spacing-xl;
 }
 
 .c-tab {
   float: left;
+  display: flex;
+  align-items: center;
 
   & + & {
     margin-left: $spacing-l;
@@ -78,18 +82,25 @@
 }
 
 // Instruction Text Area
+.l-cart-actions__instructions {
+  margin-bottom: $spacing-xl;
+}
+
 .l-cart-actions__instruction-text-area {
-  line-height: 1.6;
+  line-height: 1.4;
   width: 100%;
   min-height: 10rem;
 }
 
 .c-tab__label {
+  margin: 0;
   display: inline-block;
 }
 
 .c-tab__content {
   display: none;
+  margin-top: 6rem;
+  // pointer-events: none;
 }
 
 // Responsive Table Override
