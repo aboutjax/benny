@@ -79,6 +79,7 @@
           </tr>
           {% endfor %}
           
+
           {% for tax_line in order.tax_lines %}
             <tr>
               <td colspan="4">{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</td>

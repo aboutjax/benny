@@ -437,6 +437,9 @@ body {
 a:hover {
   text-decoration: underline; }
 
+select {
+  background-color: #fff; }
+
 .l-wrapper {
   padding: 0 3rem;
   max-width: 118rem;
@@ -454,6 +457,8 @@ a:hover {
   flex-wrap: wrap;
   padding: 2rem 1.5rem;
   background: #F5F5F5; }
+  .l-cart-actions__date {
+    flex-grow: 1; }
   .l-cart-actions__delivery-date {
     margin-bottom: 2rem;
     display: flex;
@@ -479,8 +484,11 @@ a:hover {
   padding-top: 0.75rem;
   position: relative;
   width: 100%;
-  min-height: 16rem;
+  min-height: 18rem;
   margin-bottom: 2rem; }
+  @media (max-width: 768px) {
+    .c-tabs {
+      min-height: 25rem; } }
 
 .c-tab {
   float: left;
@@ -497,6 +505,10 @@ a:hover {
     left: 0;
     width: 100%; }
 
+.c-tab__pickup {
+  display: flex;
+  align-items: flex-start; }
+
 .l-cart-actions__instructions {
   margin-bottom: 2rem; }
 
@@ -511,7 +523,7 @@ a:hover {
 
 .c-tab__content {
   display: none;
-  margin-top: 5rem; }
+  margin-top: 11rem; }
 
 @media (max-width: 768px) {
   .c-cart-table {

@@ -9,7 +9,7 @@
   background: $colour-framing;
 
   &__date {
-
+    flex-grow: 1;
   }
 
   &__delivery-date {
@@ -54,8 +54,12 @@
   padding-top: $spacing-s;
   position: relative;
   width: 100%;
-  min-height: 16rem;
+  min-height: 18rem;
   margin-bottom: $spacing-xl;
+
+  @include tablet {
+    min-height: 25rem;
+  }
 }
 
 .c-tab {
@@ -81,6 +85,11 @@
   }
 }
 
+.c-tab__pickup {
+  display: flex;
+  align-items: flex-start;
+}
+
 // Instruction Text Area
 .l-cart-actions__instructions {
   margin-bottom: $spacing-xl;
@@ -99,8 +108,7 @@
 
 .c-tab__content {
   display: none;
-  margin-top: 5rem;
-  // pointer-events: none;
+  margin-top: 11rem;
 }
 
 // Responsive Table Override

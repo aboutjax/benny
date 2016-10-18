@@ -1,0 +1,42 @@
+{{ '//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css' | stylesheet_tag }}
+{{ '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js' | script_tag }}
+<script>
+jQuery(function() {
+  jQuery("#delivery-date").datepicker( {
+    minDate: +1,
+    maxDate: '+2M',
+    beforeShowDay: jQuery.datepicker.noWeekends
+  } );
+});
+
+jQuery(function() {
+  jQuery("#pickup-date").datepicker( {
+    minDate: +0,
+    maxDate: '+2M',
+    beforeShowDay: function(date) {
+        var day = date.getDay();
+        return [(day != 1), ''];
+    }
+  } );
+});
+
+jQuery("#delivery-tab").click(function() {
+  jQuery("#delivery-date").attr('required', 'required');
+  jQuery("#pickup-date").removeAttr('required');
+  jQuery("#pickup-time").removeAttr('required');
+  jQuery('#pickup-date').val('');
+  jQuery('#pickup-time').val('');
+});
+
+jQuery("#pickup-tab").click(function() {
+  jQuery("#pickup-date").attr('required', 'required');
+  jQuery("#pickup-time").attr('required', 'required');
+  jQuery("#delivery-date").removeAttr('required');
+  jQuery('#delivery-date').val('');
+});
+</script>
+
+{% comment %}
+  To remove days of the week that aren't Saturday and Sunday, use this:
+  http://stackoverflow.com/questions/2968414/disable-specific-days-of-the-week-on-jquery-ui-datepicker
+{% endcomment %}

@@ -100,21 +100,27 @@
       <div class="l-cart-actions__attributes">
         <label class="l-cart-actions__label">Choose a delivery method</label>
         <div class="c-tabs">
-          <div class="c-tab">
+          <div class="c-tab" id="pickup-tab">
             <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="pickup">
             <label class="c-tab__label" for="pickup">Pick Up</label>
             <div class="c-tab__content">
-              {% include 'pickup-date' %}
+              <div class="c-tab__pickup">
+                {% include 'pickup-date' %}
+                {% include 'pickup-time' %}
+              </div>
+              <h3 class="l-cart-actions__date-disclaimer">Please give us at least 12 hours notice. Please note that we close at 6pm on Sunday & Tuesdays</h3>
             </div>
           </div>
-          <div class="c-tab">
+          <div class="c-tab" id="delivery-tab">
             <input class="c-tab__radio-input" type="radio" name="delivery-method" value="pickup" id="delivery" checked>
             <label class="c-tab__label" for="delivery">Delivery</label>
             <div class="c-tab__content">
               {% include 'delivery-date' %}
+              <h3 class="l-cart-actions__date-disclaimer">Please give us at least 12 hours notice. Our courier can't deliver on weekends.</h3>
             </div>
           </div>
         </div>
+        {% include 'date-picker-js' %}
         {% if settings.cart_notes_enable %}
         <div class="l-cart-actions__instructions">
           <label class="l-cart-actions__label" for="CartSpecialInstructions">Specific instructions (optional)</label>
