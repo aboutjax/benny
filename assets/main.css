@@ -484,7 +484,7 @@ select {
   padding-top: 0.75rem;
   position: relative;
   width: 100%;
-  min-height: 18rem;
+  min-height: 25rem;
   margin-bottom: 2rem; }
   @media (max-width: 768px) {
     .c-tabs {
@@ -500,10 +500,7 @@ select {
 .c-tab__radio-input {
   display: block; }
   .c-tab__radio-input:checked ~ .c-tab__content {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 100%; }
+    display: block; }
 
 .c-tab__pickup {
   display: flex;
@@ -523,7 +520,10 @@ select {
 
 .c-tab__content {
   display: none;
-  margin-top: 11rem; }
+  left: 0;
+  top: 6rem;
+  position: absolute;
+  width: 100%; }
 
 @media (max-width: 768px) {
   .c-cart-table {

@@ -54,7 +54,7 @@
   padding-top: $spacing-s;
   position: relative;
   width: 100%;
-  min-height: 18rem;
+  min-height: 25rem;
   margin-bottom: $spacing-xl;
 
   @include tablet {
@@ -78,9 +78,6 @@
   &:checked {
     ~ .c-tab__content {
       display: block;
-      position: absolute;
-      left: 0;
-      width: 100%;
     }
   }
 }
@@ -108,7 +105,10 @@
 
 .c-tab__content {
   display: none;
-  margin-top: 11rem;
+  left: 0;
+  top: 6rem;
+  position: absolute;
+  width: 100%;
 }
 
 // Responsive Table Override
