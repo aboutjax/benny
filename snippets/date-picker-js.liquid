@@ -34,6 +34,11 @@ jQuery("#pickup-tab").click(function() {
   jQuery("#delivery-date").removeAttr('required');
   jQuery('#delivery-date').val('');
 });
+
+$( document ).ready(function(){
+  console.log("ready")
+  $('#delivery-date').val('');
+})
 </script>
 
 {% comment %}

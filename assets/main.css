@@ -440,6 +440,11 @@ a:hover {
 select {
   background-color: #fff; }
 
+p {
+  margin-bottom: 2rem; }
+  p:last-of-type {
+    margin-bottom: 0; }
+
 .l-wrapper {
   padding: 0 3rem;
   max-width: 118rem;
