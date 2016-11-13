@@ -148,7 +148,20 @@
         {% if item.product.tags contains "custom box message" %}
         <div class="l-cart-actions__instructions">
           <label class="l-cart-actions__label" for="customBoxMessage">Custom message on the box (optional)</label>
-          <textarea placeholder="For e.g...please write, Congrats on the new job Burt! Love Ernie" name="attributes[custom-box-message]" class="l-cart-actions__instruction-text-area" id="customBoxMessage" value="{{ cart.attributes.custom-box-message }}">{{ cart.attributes.custom-box-message }}</textarea>
+          <textarea placeholder="For e.g...please write, Congrats on the new job Bert! Love Ernie." name="attributes[custom-box-message]" class="l-cart-actions__instruction-text-area" id="customBoxMessage" value="{{ cart.attributes.custom-box-message }}">{{ cart.attributes.custom-box-message }}</textarea>
+        </div>
+        {% break %}
+        {% endif %}
+        {% endfor %}
+      	{% comment %}
+          Loop through cart items to see if any of the product has the tag "custom tag message",
+          if there is, then display a custom text area for cart attribute.
+        {% endcomment %}
+        {% for item in cart.items %}
+        {% if item.product.tags contains "custom tag message" %}
+        <div class="l-cart-actions__instructions">
+          <label class="l-cart-actions__label" for="customTagMessage">Custom message on the tag (optional)</label>
+          <textarea placeholder="For e.g...please write, Merry Christmas Ross, love Rachel." name="attributes[custom-tag-message]" class="l-cart-actions__instruction-text-area" id="customTagMessage" value="{{ cart.attributes.custom-tag-message }}">{{ cart.attributes.custom-tag-message }}</textarea>
         </div>
         {% break %}
         {% endif %}
