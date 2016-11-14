@@ -653,12 +653,13 @@ p {
   .c-btn__neutral {
     background: #9B9B9B; }
 
-.c-product-card__title {
-  font-size: 1.4rem;
-  font-weight: 400; }
-
-.c-product-card__meta {
-  margin-bottom: 3rem; }
+.c-product-card {
+  margin-bottom: 2rem; }
+  .c-product-card__title {
+    font-size: 1.4rem;
+    font-weight: 400; }
+  .c-product-card__meta {
+    margin-bottom: 3rem; }
 
 .product-single__photos {
   background-color: #F5F5F5; }
